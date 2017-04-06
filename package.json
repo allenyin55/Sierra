@@ -1,14 +1,15 @@
 {
-  "name": "video-quickstart-node",
+  "name": "sierra",
   "version": "1.0.0",
-  "description": "Quick Start application template for Twilio Video on Node.js",
+  "description": "A new version of sierra",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "github.com/TwilioDevEd/video-quickstart-node"
+    "url": "https://github.com/allenyin55/Sierra"
   },
   "keywords": [
     "twilio",
@@ -20,7 +21,7 @@
     "time",
     "diggity"
   ],
-  "author": "Twilio Developer Education",
+  "author": "People",
   "license": "MIT",
   "engines": {
     "node": ">=4.1.0 <5.5.0"
