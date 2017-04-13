@@ -7,11 +7,23 @@ var faceMode = affdex.FaceDetectorMode.LARGE_FACES;
 
 //Construct a FrameDetector and specify the image width / height and face detector mode.
 var detector = new affdex.FrameDetector(faceMode);
-detector.addEventListener("onInitializeSuccess", function() {console.log("YOU")});
-detector.addEventListener("onInitializeFailure", function() {console.log("no...")});
-detector.addEventListener("onImageResultsSuccess", function (faces, image, timestamp) {
-  console.log(faces)
+detector.addEventListener("onInitializeSuccess", function() {
+  document.getElementById('controls').style.display = 'none' ? 'block' : 'none';
+  console.log("affectiva initialized")
 });
+detector.addEventListener("onInitializeFailure", function() {console.log("affectiva initialization failed")});
+detector.addEventListener("onImageResultsSuccess", function (faces, image, timestamp) {
+  if (faces[0]){
+     console.log(faces); 
+     var emotions = "anger" + faces[0].emotions.anger + "\ncontempt" + faces[0].emotions.contempt +
+     "\ndisgust" + faces[0].emotions.disgust + "\nengagement" + faces[0].emotions.engagement + 
+     "\nfear" + faces[0].emotions.fear + "\njoy" + faces[0].emotions.joy + "\nsadness" + faces[0].emotions.sadness +
+     "\nsurprise" + faces[0].emotions.surprise + "\nvalence" + faces[0].emotions.valence
+     log(emotions)
+    }
+  else log("Please make sure your face is in the camera")
+});
+
 detector.addEventListener("onImageResultsFailure", function (image, timestamp, err_detail) {
   console.log(err_detail)
 });
@@ -30,17 +42,14 @@ detector.detectAllAppearance();
 detector.start();
 
 function runAffectiva(){
-  var videoEl = document.getElementsByTagName("video")[0];
+  var videoEl = document.getElementById('local-media').childNodes[1];
+
   var startTimestamp = (new Date()).getTime() / 1000;
-  var convas = document.getElementById("convas")
-  var convas2 = document.getElementById("convas2");
+  var canvas = document.getElementById("snap-canvas")
   videoEl.addEventListener("progress", function(){
     var context = canvas.getContext('2d');
-    var context2 = canvas2.getContext('2d');
-    var height = 200;
-    var width = 266;
-    context.drawImage(videoEl, 0, 0, width, height);
-    var imageData = context.getImageData(0, 0, width, height);
+    context.drawImage(videoEl, 0, 0, canvas.width, canvas.height);
+    var imageData = context.getImageData(0, 0, canvas.width,  canvas.height);
     var now = (new Date()).getTime() / 1000;
     var deltaTime = now - startTimestamp;
     detector.process(imageData, deltaTime)

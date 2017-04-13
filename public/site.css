@@ -6,9 +6,11 @@ p {
   margin: 0;
 }
 
-/*canvas {
-  display: none
-}*/
+#snap-canvas {
+  display: none; 
+  width: 270px; 
+  height: 202px;
+}
 
 body {
   background: #272726;
@@ -32,6 +34,7 @@ div#remote-media {
   }
 
 div#controls {
+  display: none;
   padding: 3em;
   max-width: 1200px;
   margin: 0 auto;
