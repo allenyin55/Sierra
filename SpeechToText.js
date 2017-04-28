@@ -1,14 +1,37 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Sierra</title>
-  <link rel="stylesheet" href="site.css">
+<html class="no-js consumer" lang="en">
+  <head>
 
-
-
-  <!--Speech to Text code starts here -->
-
-<style>
+    <script>
+(function(e, p){
+    var m = location.href.match(/platform=(win8|win|mac|linux|cros)/);
+    e.id = (m && m[1]) ||
+           (p.indexOf('Windows NT 6.2') > -1 ? 'win8' : p.indexOf('Windows') > -1 ? 'win' : p.indexOf('Mac') > -1 ? 'mac' : p.indexOf('CrOS') > -1 ? 'cros' : 'linux');
+    e.className = e.className.replace(/\bno-js\b/,'js');
+  })(document.documentElement, window.navigator.userAgent)
+    </script>
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+    <meta content=
+    "Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier."
+    name="description">
+    <title>
+      Chrome Browser
+    </title>
+    <link href="https://plus.google.com/100585555255542998765" rel="publisher">
+    <link href="//www.google.com/images/icons/product/chrome-32.png" rel="icon" type="image/ico">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel=
+    "stylesheet">
+    <link href="/intl/en/chrome/assets/common/css/chrome.min.css" rel="stylesheet">
+    <script src="//www.google.com/js/gweb/analytics/autotrack.js">
+</script>
+    <script>
+new gweb.analytics.AutoTrack({
+          profile: 'UA-26908291-1'
+        });
+    </script>
+    <style>
 #info {
     font-size: 20px;
     }
@@ -63,58 +86,16 @@
     <style>
 a.c1 {font-weight: normal;}
     </style>
-
-  <!--Speech to Text code ends here -->
-
-
-
-</head>
-<body>
-  <canvas id="snap-canvas">
-  </canvas>
-  <div id="remote-media"></div>
-  <div id="controls">
-    <div id="preview">
-      <p class="instructions">Hello Beautiful</p>
-      <div id="local-media"></div>
-      <button id="button-preview">Preview My Camera</button>
-    </div>
-    <div id="room-controls">
-      <p class="instructions">Room Name:</p>
-      <input id="room-name" type="text" placeholder="Enter a room name" />
-      <button id="button-join">Join Room</button>
-      <button id="button-leave">Leave Room</button>
-    </div>
-    <div id="log"></div>
-  </div><br>
-
-
-
-
-  <br>
-  <br>
-  
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <br>
-  <br>
-
-  <!--Speech to Text code starts here -->
-
-<div class="browser-landing" id="main">
+  </head>
+  <body class="" id="grid">
+    <div class="browser-landing" id="main">
       <div class="compact marquee-stacked" id="marquee">
         <div class="marquee-copy">
-          <!-- <h1>
-             Sierra!
+          <h1>
+            <a class="c1" href="http://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">Web
+            Speech API</a> Demonstration
           </h1>
-         --></div>
+        </div>
       </div>
       <div class="compact marquee">
         <div id="info">
@@ -150,7 +131,8 @@ a.c1 {font-weight: normal;}
           </p>
         </div>
         <div id="div_start">
-          <button id="start_button" onclick="startButton(event)">Click This Button to start!</button>
+          <button id="start_button" onclick="startButton(event)"><img alt="Start" id="start_img"
+          src="/intl/en/chrome/assets/common/images/content/mic.gif"></button>
         </div>
         <div id="results">
           <span class="final" id="final_span"></span> <span class="interim" id=
@@ -182,60 +164,8 @@ a.c1 {font-weight: normal;}
             </select>
         </div>
       </div>
-    </div>
-
-
-
-  <!-- Speech to Text coded ends here -->
-
-
-
-
-
-  <script src="//media.twiliocdn.com/sdk/js/common/v0.1/twilio-common.min.js"></script>
-  <script src="//media.twiliocdn.com/sdk/js/video/releases/1.0.0-beta5/twilio-video.js"></script>
-  <script src="https://download.affectiva.com/js/3.2/affdex.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="quickstart.js"></script>
-
-  <!-- Speech to Text code starts here -->
-
-
-<script>
-(function(e, p){
-    var m = location.href.match(/platform=(win8|win|mac|linux|cros)/);
-    e.id = (m && m[1]) ||
-           (p.indexOf('Windows NT 6.2') > -1 ? 'win8' : p.indexOf('Windows') > -1 ? 'win' : p.indexOf('Mac') > -1 ? 'mac' : p.indexOf('CrOS') > -1 ? 'cros' : 'linux');
-    e.className = e.className.replace(/\bno-js\b/,'js');
-  })(document.documentElement, window.navigator.userAgent)
-    </script>
-    <meta charset="utf-8">
-    <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
-    <meta content=
-    "Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier."
-    name="description">
-    <title>
-      Chrome Browser
-    </title>
-    <link href="https://plus.google.com/100585555255542998765" rel="publisher">
-    <link href="//www.google.com/images/icons/product/chrome-32.png" rel="icon" type="image/ico">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel=
-    "stylesheet">
-    <link href="/intl/en/chrome/assets/common/css/chrome.min.css" rel="stylesheet">
-    <script src="//www.google.com/js/gweb/analytics/autotrack.js">
-</script>
-    <script>
-new gweb.analytics.AutoTrack({
-          profile: 'UA-26908291-1'
-        });
-    </script>
-
-
-<script src="/intl/en/chrome/assets/common/js/chrome.min.js">
-</script> 
-
-
-<script>
+    </div><script src="/intl/en/chrome/assets/common/js/chrome.min.js">
+</script> <script>
 var chrmMenuBar = new chrm.ui.MenuBar();
       chrmMenuBar.decorate('nav');
       var chrmLogo = new chrm.ui.Logo('logo');
@@ -263,13 +193,7 @@ var chrmMenuBar = new chrm.ui.MenuBar();
       doubleTracker.track();
 
       doubleTracker.trackClass('doubletrack', true);
-
-    </script>
-
-
-     <script>
-
-     
+    </script> <script>
 var langs =
 [['Afrikaans',       ['af-ZA']],
  ['Bahasa Indonesia',['id-ID']],
@@ -440,40 +364,6 @@ if (!('webkitSpeechRecognition' in window)) {
       }
     }
     final_transcript = capitalize(final_transcript);
-
-    console.log("SEND THIS TO NODE" + final_transcript);
-
-    console.log("SEND INTERIM TO NODE" + interim_transcript);
-
-    $.ajax({
-       type: "post",
-       url: "/sentiment",  
-       data: interim_transcript,     
-       success: function(data)
-       {
-        console.log(data + " is the data received from node");
-       },
-       error: function(jqXHR, textStatus, err)
-       {
-        console.log(err + " is the error" )
-       }
-
-    });
-
-    
-
-/*$.getJSON('/USC', function(request, data) {
-  
-  console.log("In /USC");
-
-});
-*/
-
-
-
-
-
-
     final_span.innerHTML = linebreak(final_transcript);
     interim_span.innerHTML = linebreak(interim_transcript);
     if (final_transcript || interim_transcript) {
@@ -573,15 +463,5 @@ function showButtons(style) {
   email_info.style.display = 'none';
 }
     </script>
-
-  <!-- Speech to Text code ends here -->
-
-
-
-
-
-
-
-
-</body>
+  </body>
 </html>
