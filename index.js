@@ -25,8 +25,8 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.use(bodyParser.json());
+// Allen: use text parser instead
+app.use(bodyParser.text());
 /*
 Generate an Access Token for a chat application user - it generates a random
 username for the client requesting a token, and takes a device ID as a query
@@ -34,17 +34,10 @@ parameter.
 */
 
 
-app.post('/sentiment', function(request, response){
-
-       
-    console.log(request.body. + " is the body");
+app.post('/sentiment', function(request, response){   
+    console.log(request.body + " is the body");
     response.send("HeLLOOvkhvjhvjhcj");
-
-
 });
-
-
-
 
 app.get('/token', function(request, response) {
     var identity = randomUsername();

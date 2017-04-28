@@ -445,10 +445,12 @@ if (!('webkitSpeechRecognition' in window)) {
 
     console.log("SEND INTERIM TO NODE" + interim_transcript);
 
+    // Allen: specify contentType
     $.ajax({
        type: "post",
        url: "/sentiment",  
-       data: interim_transcript,     
+       data: interim_transcript,   
+       contentType: "text/plain",  
        success: function(data)
        {
         console.log(data + " is the data received from node");
